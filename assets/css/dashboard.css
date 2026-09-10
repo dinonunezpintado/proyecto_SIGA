@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f6f8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #26384f;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/*menu lateral*/
+
+.sidebar {
+    width: 280px;
+    min-height: 100vh;
+    background: #18345f;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    padding: 35px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    text-align: center;
+}
+
+.sidebar-logo h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.sidebar-logo p {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .8);
+}
+
+.sidebar-menu {
+    padding-top: 25px;
+    flex-grow: 1;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: rgba(255, 255, 255, .88);
+    text-decoration: none;
+    padding: 17px 28px;
+    font-size: 17px;
+    transition: .2s;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(255, 255, 255, .08);
+    color: white;
+}
+
+.sidebar-menu a.active {
+    background: #1f5fbf;
+    color: white;
+}
+
+.sidebar-menu i {
+    font-size: 22px;
+}
+
+/*contenido principal*/
+
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+}
+
+/*barra superior*/
+
+.topbar {
+    height: 72px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    border-bottom: 1px solid #e2e5e9;
+}
+
+.topbar-left {
+    font-size: 26px;
+    color: #18345f;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    color: #26384f;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-link {
+    color: #26384f;
+    text-decoration: none;
+}
+
+/*contenido dashboard*/
+
+.dashboard-content {
+    padding: 35px;
+}
+
+.welcome-title {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.welcome-role {
+    font-size: 18px;
+    color: #6c757d;
+}
+
+/*tarjetas de estadisticas*/
+
+.stat-card {
+    background: white;
+    border: 1px solid #e0e4e8;
+    border-radius: 16px;
+    padding: 25px;
+    min-height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.icon-blue {
+    background: #e4eefb;
+    color: #1f5fae;
+}
+
+.icon-green {
+    background: #e3f3e9;
+    color: #20844d;
+}
+
+.icon-purple {
+    background: #eee8f7;
+    color: #6b45aa;
+}
+
+.icon-orange {
+    background: #fff1db;
+    color: #d98200;
+}
+
+.stat-title {
+    font-size: 18px;
+    color: #45576b;
+}
+
+.stat-number {
+    font-size: 38px;
+    font-weight: 700;
+    color: #18345f;
+}
+
+.stat-link {
+    text-decoration: none;
+    color: #244e87;
+    font-size: 15px;
+}
+
+/*paneles*/
+
+.panel {
+    background: white;
+    border: 1px solid #e0e4e8;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.panel-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #e5e7ea;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.panel-body {
+    padding: 20px 25px;
+}
+
+/*agenda*/
+
+.agenda-date {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e7ea;
+    color: #526174;
+    font-size: 17px;
+}
+
+.agenda-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.agenda-time {
+    width: 120px;
+    font-weight: 600;
+    color: #315b91;
+}
+
+.agenda-details {
+    flex-grow: 1;
+}
+
+.agenda-name {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.agenda-space {
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.agenda-status {
+    margin-left: 15px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 70px 20px;
+    color: #748295;
+}
+
+.empty-state i {
+    font-size: 55px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/*proximas actividades*/
+
+.upcoming-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.upcoming-date {
+    width: 58px;
+    text-align: center;
+    border-right: 1px solid #e5e7ea;
+    padding-right: 12px;
+}
+
+.upcoming-day {
+    font-size: 24px;
+    font-weight: 700;
+    color: #18345f;
+}
+
+.upcoming-month {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.upcoming-info {
+    flex-grow: 1;
+}
+
+.upcoming-name {
+    font-weight: 600;
+}
+
+.upcoming-details {
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/*calendario*/
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.calendar-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 12px;
+}
+
+.calendar-day-name {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.calendar-day {
+    padding: 8px;
+    border-radius: 50%;
+    min-height: 38px;
+}
+
+.calendar-day.today {
+    background: #1f5fae;
+    color: white;
+}
+
+.calendar-empty {
+    min-height: 38px;
+}
+
+/*version responsive*/
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar-logo h1 {
+        font-size: 24px;
+    }
+
+    .sidebar-logo p {
+        display: none;
+    }
+
+    .sidebar-menu a span {
+        display: none;
+    }
+
+    .sidebar-menu a {
+        justify-content: center;
+        padding: 18px;
+    }
+
+    .main-content {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .user-info span {
+        display: none;
+    }
+
+    .agenda-time {
+        width: 85px;
+        font-size: 13px;
+    }
+
+}

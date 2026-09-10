@@ -1,0 +1,9 @@
+# Configuración privada de la base de datos
+/config/database.php
+
+# Archivos temporales de NetBeans
+/nbproject/private/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
