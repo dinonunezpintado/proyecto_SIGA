@@ -545,7 +545,7 @@ $diaActual =
             </a>
 
 
-            <a href="../actividades/index.php">
+            <a href="/SIGA/app/views/actividades/actividades.php">
 
                 <i class="bi bi-calendar-plus"></i>
 
