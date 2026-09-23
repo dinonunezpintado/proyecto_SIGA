@@ -191,6 +191,18 @@ $mensajeExito = $success === '1';
         rel="stylesheet"
         href="/SIGA/assets/css/actividades.css"
     >
+    
+    <style>
+        .sidebar-logo-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar-logo-link h1 {
+            color: inherit;
+        }
+    </style>
 
 </head>
 
@@ -204,10 +216,12 @@ $mensajeExito = $success === '1';
 
         <div class="sidebar-logo">
 
-            <h1>
-                <i class="bi bi-calendar3"></i>
-                SIGA
-            </h1>
+            <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-logo-link">
+                <h1>
+                    <i class="bi bi-calendar3"></i>
+                    SIGA
+                </h1>
+            </a>
 
             <p>
                 Sistema Institucional<br>
@@ -248,7 +262,7 @@ $mensajeExito = $success === '1';
                     </a>
 
                     <a
-                        href="#"
+                        href="/SIGA/app/views/actividades/actividades.php"
                         class="sidebar-sublink"
                     >
                         <span class="submenu-dot"></span>
@@ -259,45 +273,31 @@ $mensajeExito = $success === '1';
 
             </div>
 
-            <a href="#" class="sidebar-link">
-                <i class="bi bi-calendar3"></i>
+                        <a href="../calendario/index.php">
+                <i class="bi bi-calendar-week"></i>
                 <span>Calendario</span>
             </a>
 
-            <a href="#" class="sidebar-link">
-                <i class="bi bi-building"></i>
-                <span>Disponibilidad de Espacios</span>
-            </a>
-
-            <a href="#" class="sidebar-link">
-                <i class="bi bi-display"></i>
-                <span>Equipamiento</span>
-                <i class="bi bi-chevron-right sidebar-arrow"></i>
-            </a>
-
-            <a href="#" class="sidebar-link">
+            <a href="../reportes/index.php">
                 <i class="bi bi-bar-chart"></i>
                 <span>Reportes</span>
-                <i class="bi bi-chevron-right sidebar-arrow"></i>
             </a>
 
-            <a href="#" class="sidebar-link">
+            <a href="../auditoria/index.php">
                 <i class="bi bi-clock-history"></i>
                 <span>Historial de Acciones</span>
             </a>
 
-            <a href="#" class="sidebar-link">
-                <i class="bi bi-bell"></i>
-                <span>Recordatorios</span>
-            </a>
-
         </nav>
 
-        <div class="sidebar-bottom">
+        <div class="sidebar-footer">
 
-            <a href="#" class="sidebar-link">
-                <i class="bi bi-question-circle"></i>
-                <span>Ayuda</span>
+            <a
+                href="/SIGA/app/helpers/logout.php"
+                class="sidebar-logout"
+            >
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Cerrar sesión</span>
             </a>
 
         </div>
@@ -314,7 +314,15 @@ $mensajeExito = $success === '1';
         <header class="topbar">
 
             <div class="topbar-left">
-                <i class="bi bi-list"></i>
+                <button
+                    type="button"
+                    class="topbar-menu"
+                    id="menuToggle"
+                    aria-label="Mostrar u ocultar menú"
+                    title="Mostrar u ocultar menú"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
 
             <div class="topbar-right">
@@ -1340,6 +1348,16 @@ actualizarHorario();
 actualizarEspacio();
 actualizarEquipamiento();
 
+</script>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function () {
+            document.body.classList.toggle('sidebar-collapsed');
+        });
+    }
 </script>
 
 </body>

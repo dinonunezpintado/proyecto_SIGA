@@ -1,0 +1,388 @@
+/* pagina de equipamiento */
+
+.equipment-list-page {
+    padding: 35px;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.equipment-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.equipment-list-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.equipment-list-title-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4eefb;
+    color: #1f5fae;
+    font-size: 27px;
+    flex-shrink: 0;
+}
+
+.equipment-list-title h1 {
+    margin: 0 0 5px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #18345f;
+}
+
+.equipment-list-title p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 15px;
+}
+
+.equipment-date {
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #edf4ff;
+    color: #315b91;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.equipment-list-card {
+    background: #ffffff;
+    border: 1px solid #e0e4e8;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.equipment-list-card-header {
+    min-height: 76px;
+    padding: 18px 25px;
+    border-bottom: 1px solid #e5e9ed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.equipment-list-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #18345f;
+}
+
+.equipment-list-card-title i {
+    color: #1f5fbf;
+    font-size: 24px;
+}
+
+.equipment-list-card-title h2 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.equipment-list-card-date {
+    min-height: 36px;
+    padding: 8px 13px;
+    border-radius: 8px;
+    background: #edf4ff;
+    color: #315b91;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.equipment-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.equipment-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+}
+
+.equipment-table thead th {
+    padding: 16px 18px;
+    background: #f5f7f9;
+    border-bottom: 1px solid #e0e4e8;
+    color: #18345f;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.equipment-table tbody td {
+    padding: 18px;
+    border-bottom: 1px solid #e9edf1;
+    color: #45576b;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.equipment-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.equipment-table tbody tr:hover {
+    background: #fbfcfe;
+}
+
+.equipment-time {
+    width: 17%;
+    color: #315b91 !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.equipment-time i {
+    margin-right: 7px;
+    color: #1f5fbf;
+}
+
+.equipment-activity {
+    width: 27%;
+}
+
+.equipment-activity strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #18345f;
+    font-size: 15px;
+}
+
+.equipment-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #e3f3e9;
+    color: #20844d;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.equipment-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.equipment-space {
+    width: 20%;
+    color: #45576b;
+}
+
+.equipment-space i {
+    margin-right: 7px;
+    color: #6c83a0;
+}
+
+.equipment-request-box {
+    min-height: 72px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f1f6fc;
+    border: 1px solid #e2ebf5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+}
+
+.equipment-badge {
+    min-height: 38px;
+    padding: 7px 11px;
+    border-radius: 9px;
+    background: #ffffff;
+    border: 1px solid #dbe5f0;
+    color: #18345f;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(24, 52, 95, 0.05);
+}
+
+.equipment-badge strong {
+    color: #1f5fbf;
+    font-size: 13px;
+}
+
+.equipment-badge-icon {
+    width: 27px;
+    height: 27px;
+    border-radius: 7px;
+    background: #e4eefb;
+    color: #1f5fbf;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.equipment-list-footer {
+    min-height: 62px;
+    padding: 17px 25px;
+    border-top: 1px solid #e5e9ed;
+    color: #45576b;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.equipment-list-footer strong {
+    color: #18345f;
+}
+
+.equipment-empty {
+    padding: 80px 25px;
+    text-align: center;
+    color: #748295;
+}
+
+.equipment-empty i {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 52px;
+    color: #6c83a0;
+}
+
+.equipment-empty h3 {
+    margin: 0 0 8px;
+    color: #45576b;
+    font-size: 19px;
+}
+
+.equipment-empty p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.equipment-alert {
+    margin-bottom: 20px;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.sidebar-logo-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-logo-link h1 {
+    color: inherit;
+}
+
+@media (max-width: 1200px) {
+    .equipment-list-page {
+        padding: 30px;
+    }
+
+    .equipment-list-header {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 992px) {
+    .equipment-list-page {
+        padding: 25px;
+    }
+
+    .equipment-list-header {
+        flex-direction: column;
+    }
+
+    .equipment-date {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipment-list-page {
+        padding: 20px;
+    }
+
+    .equipment-list-title h1 {
+        font-size: 24px;
+    }
+
+    .equipment-list-title p {
+        font-size: 13px;
+    }
+
+    .equipment-list-card-header {
+        padding: 17px 18px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .equipment-list-card-title h2 {
+        font-size: 18px;
+    }
+
+    .equipment-list-card-date {
+        align-self: flex-start;
+    }
+
+    .equipment-list-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .equipment-list-page {
+        padding: 15px;
+    }
+
+    .equipment-list-title {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .equipment-list-title-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
+    }
+
+    .equipment-list-title h1 {
+        font-size: 21px;
+    }
+
+    .equipment-list-title p {
+        line-height: 1.45;
+    }
+
+    .equipment-date {
+        width: 100%;
+        justify-content: center;
+    }
+}
