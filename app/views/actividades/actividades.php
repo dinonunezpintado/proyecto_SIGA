@@ -91,26 +91,22 @@ $totalActividades = count($actividades);
     >
 
     <link
+        rel="icon"
+        type="image/png"
+        href="/SIGA/assets/img/logo/favicon.png"
+    >
+
+    <link
         rel="stylesheet"
         href="/SIGA/assets/css/dashboard.css"
     >
 
     <link
         rel="stylesheet"
-        href="/SIGA/assets/css/actividades.css"
+        href="/SIGA/assets/css/actividades.css?v=20261007"
     >
     
-    <style>
-        .sidebar-logo-link {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
 
-        .sidebar-logo-link h1 {
-            color: inherit;
-        }
-    </style>
 </head>
 
 <body>
@@ -123,17 +119,22 @@ $totalActividades = count($actividades);
 
         <div class="sidebar-logo">
 
-            <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-logo-link">
-                <h1>
-                    <i class="bi bi-calendar3"></i>
-                    SIGA
-                </h1>
-            </a>
+            <a
+                href="/SIGA/app/views/dashboard/index.php"
+                class="sidebar-logo-link"
+            >
+                <img
+                    src="/SIGA/assets/img/logo/logo_SIGA.png"
+                    alt="SIGA - Sistema Institucional de Gestión de Actividades"
+                    class="sidebar-logo-image sidebar-logo-image-full"
+                >
 
-            <p>
-                Sistema Institucional<br>
-                de Gestión de Actividades
-            </p>
+                <img
+                    src="/SIGA/assets/img/logo/logo_SIGA_mini.png"
+                    alt="SIGA"
+                    class="sidebar-logo-image sidebar-logo-image-mini"
+                >
+            </a>
 
         </div>
 
@@ -180,17 +181,17 @@ $totalActividades = count($actividades);
 
             </div>
 
-            <a href="../calendario/index.php">
+            <a href="/SIGA/app/views/calendario/index.php">
                 <i class="bi bi-calendar-week"></i>
                 <span>Calendario</span>
             </a>
 
-            <a href="../reportes/index.php">
+            <a href="/SIGA/app/views/reportes/index.php">
                 <i class="bi bi-bar-chart"></i>
                 <span>Reportes</span>
             </a>
 
-            <a href="../auditoria/index.php">
+            <a href="/SIGA/app/views/auditoria/index.php">
                 <i class="bi bi-clock-history"></i>
                 <span>Historial de Acciones</span>
             </a>

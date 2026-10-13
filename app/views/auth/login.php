@@ -19,14 +19,12 @@ $error = $_GET['error'] ?? '';
     <title>SIGA - Iniciar sesión</title>
 
 
-    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
 
-    <!-- Bootstrap Icons -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -54,7 +52,13 @@ $error = $_GET['error'] ?? '';
         class="logo-msp"
     >
 
-    <h2>Iniciar sesión</h2>
+    <h2>SIGA</h2>
+
+    <h5>Sistema Institucional de Gestión de Actividades</h5>
+
+    <br>
+
+    <h3>Iniciar sesión</h3>
 
     <p class="text-muted mb-0">
         Ingresa tus credenciales para continuar
@@ -75,8 +79,8 @@ $error = $_GET['error'] ?? '';
 
 
     <form
-    method="POST"
-    action="/SIGA/index.php"
+        method="POST"
+        action="/SIGA/index.php"
     >
 
         <input
@@ -86,7 +90,6 @@ $error = $_GET['error'] ?? '';
         >
 
         <div class="mb-3">
-
 
             <label
                 for="email"
@@ -99,7 +102,6 @@ $error = $_GET['error'] ?? '';
 
 
             <div class="input-group">
-
 
                 <span class="input-group-text">
 
@@ -118,14 +120,12 @@ $error = $_GET['error'] ?? '';
                     required
                 >
 
-
             </div>
-
 
         </div>
 
-        <div class="mb-4">
 
+        <div class="mb-4">
 
             <label
                 for="contrasena"
@@ -138,7 +138,6 @@ $error = $_GET['error'] ?? '';
 
 
             <div class="input-group">
-
 
                 <span class="input-group-text">
 
@@ -158,10 +157,25 @@ $error = $_GET['error'] ?? '';
                 >
 
 
+                <button
+                    type="button"
+                    class="password-toggle"
+                    id="togglePassword"
+                    aria-label="Mostrar contraseña"
+                    title="Mostrar contraseña"
+                >
+
+                    <i
+                        class="bi bi-eye"
+                        id="togglePasswordIcon"
+                    ></i>
+
+                </button>
+
             </div>
 
-
         </div>
+
 
         <button
             type="submit"
@@ -175,14 +189,12 @@ $error = $_GET['error'] ?? '';
 
     </form>
 
-    <div class="info-box">
 
+    <div class="info-box">
 
         <div class="d-flex gap-2">
 
-
             <i class="bi bi-info-circle"></i>
-
 
             <div>
 
@@ -194,9 +206,7 @@ $error = $_GET['error'] ?? '';
 
             </div>
 
-
         </div>
-
 
     </div>
 
@@ -204,11 +214,95 @@ $error = $_GET['error'] ?? '';
 </div>
 
 
-<!-- Bootstrap JS -->
-
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
+
+
+<script>
+
+const passwordInput = document.getElementById('contrasena');
+const togglePassword = document.getElementById('togglePassword');
+const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+
+togglePassword.addEventListener('click', function () {
+
+    const passwordVisible =
+        passwordInput.type === 'text';
+
+    if (passwordVisible) {
+
+        passwordInput.type = 'password';
+
+        togglePasswordIcon.classList.remove('bi-eye-slash');
+
+        togglePasswordIcon.classList.add('bi-eye');
+
+        togglePassword.setAttribute(
+            'aria-label',
+            'Mostrar contraseña'
+        );
+
+        togglePassword.setAttribute(
+            'title',
+            'Mostrar contraseña'
+        );
+
+    } else {
+
+        passwordInput.type = 'text';
+
+        togglePasswordIcon.classList.remove('bi-eye');
+
+        togglePasswordIcon.classList.add('bi-eye-slash');
+
+        togglePassword.setAttribute(
+            'aria-label',
+            'Ocultar contraseña'
+        );
+
+        togglePassword.setAttribute(
+            'title',
+            'Ocultar contraseña'
+        );
+
+    }
+
+});
+
+</script>
+
+
+<style>
+
+.password-toggle {
+    border: 1px solid #dee2e6;
+    border-left: 0;
+    background: #ffffff;
+    color: #1f5fbf;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.password-toggle:hover {
+    background: #f5f8fc;
+    color: #18345f;
+}
+
+.password-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.password-toggle i {
+    font-size: 18px;
+}
+
+</style>
 
 
 </body>

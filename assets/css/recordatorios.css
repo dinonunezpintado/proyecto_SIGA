@@ -1,0 +1,429 @@
+.reminders-page {
+    padding: 30px;
+}
+
+.reminders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.reminders-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.reminders-title-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: #edf4ff;
+    color: #1f5fbf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.reminders-title h1 {
+    margin: 0 0 5px;
+    color: #18345f;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.reminders-title p {
+    margin: 0;
+    color: #748295;
+    font-size: 14px;
+}
+
+.reminders-alert {
+    margin-bottom: 20px;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.reminders-list-card {
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(24, 52, 95, 0.04);
+}
+
+.reminders-list-card-header {
+    min-height: 78px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e9ef;
+}
+
+.reminders-list-card-title {
+    margin: 0 0 4px;
+    color: #18345f;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.reminders-list-card-subtitle {
+    margin: 0;
+    color: #748295;
+    font-size: 13px;
+}
+
+.reminders-list-count {
+    color: #6c757d;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.reminders-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.reminders-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+}
+
+.reminders-table thead {
+    background: #f7f9fb;
+}
+
+.reminders-table th {
+    padding: 14px 16px;
+    color: #45576b;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 1px solid #e5e9ef;
+    white-space: nowrap;
+}
+
+.reminders-table td {
+    padding: 15px 16px;
+    color: #344054;
+    font-size: 13px;
+    border-bottom: 1px solid #eef0f2;
+    vertical-align: middle;
+}
+
+.reminders-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.reminders-table tbody tr:hover {
+    background: #fafbfd;
+}
+
+.reminder-date {
+    color: #18345f !important;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.reminder-time {
+    color: #45576b !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.reminder-activity {
+    color: #18345f !important;
+    font-weight: 700;
+}
+
+.reminder-contact {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.reminder-contact i {
+    color: #1f5fbf;
+    font-size: 15px;
+}
+
+.reminder-action {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.whatsapp-button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #20a85a;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 2px 5px rgba(32, 168, 90, 0.22);
+}
+
+.whatsapp-button:hover {
+    background: #178a48;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.whatsapp-button i {
+    font-size: 22px;
+}
+
+.whatsapp-disabled {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #eef0f2;
+    color: #9aa4b2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-disabled i {
+    font-size: 18px;
+}
+
+.reminders-empty {
+    padding: 70px 25px;
+    text-align: center;
+    color: #748295;
+}
+
+.reminders-empty i {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 52px;
+}
+
+.reminders-empty h3 {
+    margin: 0 0 8px;
+    color: #45576b;
+    font-size: 19px;
+}
+
+.reminders-empty p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.sidebar-logo-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-logo-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sidebar-logo-link h1 {
+    color: inherit;
+}
+
+@media (max-width: 992px) {
+
+    .reminders-page {
+        padding: 25px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .reminders-page {
+        padding: 20px;
+    }
+
+    .reminders-title h1 {
+        font-size: 24px;
+    }
+
+    .reminders-title p {
+        font-size: 13px;
+    }
+
+    .reminders-list-card-header {
+        padding: 18px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .reminders-page {
+        padding: 15px;
+    }
+
+    .reminders-title {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .reminders-title-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
+    }
+
+    .reminders-title h1 {
+        font-size: 21px;
+    }
+
+}
+
+/* configuracion oficial de la sidebar para mantenerla igual al resto de siga */
+.sidebar {
+    width: 280px;
+}
+
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+}
+
+.sidebar-logo {
+    height: 160px;
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.sidebar-logo-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.sidebar-logo-image {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.sidebar-logo-image-full {
+    width: 225px;
+    max-width: 100%;
+}
+
+.sidebar-logo-image-mini {
+    display: none;
+    width: 52px;
+    height: auto;
+}
+
+.sidebar-collapsed .sidebar {
+    width: 82px;
+}
+
+.sidebar-collapsed .main-content {
+    margin-left: 82px;
+    width: calc(100% - 82px);
+}
+
+.sidebar-collapsed .sidebar-logo {
+    height: 120px;
+    padding: 20px 0;
+}
+
+.sidebar-collapsed .sidebar-logo-image-full {
+    display: none;
+}
+
+.sidebar-collapsed .sidebar-logo-image-mini {
+    display: block;
+    width: 52px;
+    height: auto;
+}
+
+.sidebar-collapsed .sidebar-menu {
+    padding-top: 18px;
+}
+
+.sidebar-collapsed .sidebar-link,
+.sidebar-collapsed .sidebar-logout {
+    justify-content: center;
+    gap: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sidebar-collapsed .sidebar-link span,
+.sidebar-collapsed .sidebar-logout span {
+    display: none;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-menu {
+    border: 0;
+    background: transparent;
+    color: #18345f;
+    font-size: 26px;
+    line-height: 1;
+    padding: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-menu:hover {
+    color: #1f5fbf;
+}
+
+.topbar-menu:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .topbar-right {
+        gap: 18px;
+    }
+
+    .reminders-page {
+        padding: 20px;
+    }
+
+    .reminders-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

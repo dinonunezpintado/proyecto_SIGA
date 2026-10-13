@@ -32,23 +32,37 @@ body {
 }
 
 .sidebar-logo {
-    padding: 35px 30px;
+    height: 160px;
+    padding: 28px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, .12);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.sidebar-logo h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 2px;
+.sidebar-logo-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.sidebar-logo p {
-    margin-top: 8px;
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, .8);
+.sidebar-logo-full {
+    display: block;
+    width: 225px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.sidebar-logo-mini {
+    display: none;
+    width: 52px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .sidebar-menu {
@@ -631,27 +645,17 @@ body {
 }
 
 .sidebar-collapsed .sidebar-logo {
+    height: 120px;
     padding: 20px 0;
 }
 
-.sidebar-collapsed .sidebar-logo h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    font-size: 24px;
-    letter-spacing: 0;
-    white-space: nowrap;
-    overflow: visible;
-}
-
-.sidebar-collapsed .sidebar-logo h1 i {
-    font-size: 24px;
-    flex-shrink: 0;
-}
-
-.sidebar-collapsed .sidebar-logo p {
+.sidebar-collapsed .sidebar-logo-full {
     display: none;
+}
+
+.sidebar-collapsed .sidebar-logo-mini {
+    display: block;
+    width: 54px;
 }
 
 .sidebar-collapsed .sidebar-menu a,
@@ -689,15 +693,21 @@ body {
 @media (max-width: 992px) {
 
     .sidebar {
-        width: 80px;
+        width: 82px;
     }
 
-    .sidebar-logo h1 {
-        font-size: 24px;
+    .sidebar-logo {
+        height: 120px;
+        padding: 20px 0;
     }
 
-    .sidebar-logo p {
+    .sidebar-logo-full {
         display: none;
+    }
+
+    .sidebar-logo-mini {
+        display: block;
+        width: 54px;
     }
 
     .sidebar-menu a span {
@@ -710,8 +720,8 @@ body {
     }
 
     .main-content {
-        margin-left: 80px;
-        width: calc(100% - 80px);
+        margin-left: 82px;
+        width: calc(100% - 82px);
     }
 
     .dashboard-content {

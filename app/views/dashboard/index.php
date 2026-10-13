@@ -188,7 +188,8 @@ try {
         FROM actividades a
         INNER JOIN reservas r
             ON a.id_reserva = r.id_reserva
-        WHERE r.fecha >= CURDATE()
+        WHERE TIMESTAMP(r.fecha, r.hora_inicio) >= NOW()
+        AND TIMESTAMP(r.fecha, r.hora_inicio) <= DATE_ADD(NOW(), INTERVAL 24 HOUR)
         AND a.estado = 'Confirmada'
         AND r.estado = 'Confirmada'
         ORDER BY r.fecha ASC, r.hora_inicio ASC
@@ -306,20 +307,9 @@ $fechaTexto =
 
     <link
         rel="stylesheet"
-        href="../../../assets/css/dashboard.css"
+        href="../../../assets/css/dashboard.css?v=2"
     >
 
-    <style>
-        .sidebar-logo-link {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
-
-        .sidebar-logo-link h1 {
-            color: inherit;
-        }
-    </style>
 
 </head>
 
@@ -328,23 +318,27 @@ $fechaTexto =
 <div class="app-container">
 
     <aside class="sidebar">
-        
+
         <div class="sidebar-logo">
-            
+
             <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-logo-link">
-                <h1>
-                    <i class="bi bi-calendar3"></i>
-                    SIGA
-                </h1>
+
+                <img
+                    src="/SIGA/assets/img/logo/logo_SIGA.png"
+                    alt="SIGA - Sistema Institucional de Gestión de Actividades"
+                    class="sidebar-logo-full"
+                >
+
+                <img
+                    src="/SIGA/assets/img/logo/logo_SIGA_mini.png"
+                    alt="SIGA"
+                    class="sidebar-logo-mini"
+                >
+
             </a>
-                
-            <p>
-                Sistema Institucional<br>
-                de Gestión de Actividades
-            </p>
 
         </div>
-           
+
         <nav class="sidebar-menu">
 
             <a
@@ -396,6 +390,7 @@ $fechaTexto =
         <header class="topbar">
 
             <div class="topbar-left">
+
                 <button
                     type="button"
                     class="topbar-menu"
@@ -405,6 +400,7 @@ $fechaTexto =
                 >
                     <i class="bi bi-list"></i>
                 </button>
+
             </div>
 
             <div class="topbar-right">
@@ -436,6 +432,7 @@ $fechaTexto =
             <div class="dashboard-header">
 
                 <div>
+
                     <h2 class="welcome-title">
                         Hola
                         <?= htmlspecialchars(
@@ -448,6 +445,7 @@ $fechaTexto =
                     <div class="welcome-role">
                         <?= htmlspecialchars($rolUsuario) ?>
                     </div>
+
                 </div>
 
                 <div class="dashboard-date">
@@ -699,7 +697,7 @@ $fechaTexto =
 
                             <div>
                                 <i class="bi bi-bell me-2"></i>
-                                Próximos Recordatorios
+                                Recordatorios inminentes
                             </div>
 
                             <a href="../recordatorios/index.php">
@@ -733,6 +731,7 @@ $fechaTexto =
                                             <?php foreach ($proximosRecordatorios as $recordatorio): ?>
 
                                                 <?php
+
                                                 $telefonoWhatsApp =
                                                     preg_replace(
                                                         '/\D+/',
@@ -777,11 +776,13 @@ $fechaTexto =
                                                     rawurlencode(
                                                         $mensajeWhatsApp
                                                     );
+
                                                 ?>
 
                                                 <tr>
 
                                                     <td>
+
                                                         <div class="reminder-contact">
                                                             <?= htmlspecialchars(
                                                                 $recordatorio['responsable']
@@ -793,6 +794,7 @@ $fechaTexto =
                                                                 $recordatorio['nombre']
                                                             ) ?>
                                                         </div>
+
                                                     </td>
 
                                                     <td class="reminder-activity">
@@ -850,7 +852,7 @@ $fechaTexto =
 
                                 <div class="empty-state reminder-empty">
                                     <i class="bi bi-bell-slash"></i>
-                                    No hay próximos recordatorios.
+                                    No hay recordatorios dentro de las próximas 24 horas.
                                 </div>
 
                             <?php endif; ?>
@@ -910,6 +912,7 @@ $fechaTexto =
                                                 <tr>
 
                                                     <td>
+
                                                         <span class="activity-dot"></span>
 
                                                         <?= date(
@@ -918,9 +921,11 @@ $fechaTexto =
                                                                 $actividad['fecha']
                                                             )
                                                         ) ?>
+
                                                     </td>
 
                                                     <td>
+
                                                         <?= htmlspecialchars(
                                                             substr(
                                                                 $actividad['hora_inicio'],
@@ -938,6 +943,7 @@ $fechaTexto =
                                                                 5
                                                             )
                                                         ) ?>
+
                                                     </td>
 
                                                     <td class="activity-name">

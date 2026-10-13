@@ -156,6 +156,79 @@ $mensajesError = [
 
 $mensajeError = $mensajesError[$error] ?? '';
 $mensajeExito = $success === '1';
+
+function iconoEquipamiento($nombre)
+{
+    $nombreNormalizado = strtolower(trim($nombre));
+
+    if (strpos($nombreNormalizado, 'notebook') !== false) {
+        return 'bi-laptop';
+    }
+
+    if (strpos($nombreNormalizado, 'proyector') !== false) {
+        return 'bi-projector';
+    }
+
+    if (strpos($nombreNormalizado, 'pantalla') !== false) {
+        return 'bi-file-easel';
+    }
+
+    if (strpos($nombreNormalizado, 'tv') !== false) {
+        return 'bi-tv';
+    }
+
+    if (
+        strpos($nombreNormalizado, 'micrófono') !== false ||
+        strpos($nombreNormalizado, 'microfono') !== false
+    ) {
+        return 'bi-mic';
+    }
+
+    if (
+        strpos($nombreNormalizado, 'audio') !== false ||
+        strpos($nombreNormalizado, 'parlante') !== false
+    ) {
+        return 'bi-volume-up';
+    }
+
+    if (
+        strpos($nombreNormalizado, 'alargue') !== false ||
+        strpos($nombreNormalizado, 'cable') !== false ||
+        strpos($nombreNormalizado, 'zapatilla') !== false
+    ) {
+        return 'bi-plug';
+    }
+
+    if (
+        strpos($nombreNormalizado, 'puntero') !== false ||
+        strpos($nombreNormalizado, 'láser') !== false ||
+        strpos($nombreNormalizado, 'laser') !== false
+    ) {
+        return 'bi-cursor';
+    }
+
+    if (strpos($nombreNormalizado, 'teclado') !== false) {
+        return 'bi-keyboard';
+    }
+
+    if (strpos($nombreNormalizado, 'mouse') !== false) {
+        return 'bi-mouse';
+    }
+
+    if (strpos($nombreNormalizado, 'pendrive') !== false) {
+        return 'bi-usb-drive';
+    }
+
+    if (
+        strpos($nombreNormalizado, 'adaptador hdmi - vga') !== false ||
+        strpos($nombreNormalizado, 'adaptador hdmi-vga') !== false ||
+        strpos($nombreNormalizado, 'adaptador hdmi/vga') !== false
+    ) {
+        return 'bi-hdmi';
+    }
+
+    return 'bi-box-seam';
+}
 ?>
 
 <!DOCTYPE html>
@@ -191,18 +264,8 @@ $mensajeExito = $success === '1';
         rel="stylesheet"
         href="/SIGA/assets/css/actividades.css"
     >
-    
-    <style>
-        .sidebar-logo-link {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
 
-        .sidebar-logo-link h1 {
-            color: inherit;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="/SIGA/assets/img/logo/favicon.png">
 
 </head>
 
@@ -215,91 +278,55 @@ $mensajeExito = $success === '1';
     <aside class="sidebar">
 
         <div class="sidebar-logo">
-
             <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-logo-link">
-                <h1>
-                    <i class="bi bi-calendar3"></i>
-                    SIGA
-                </h1>
+                <img src="/SIGA/assets/img/logo/logo_SIGA.png" alt="SIGA - Sistema Institucional de Gestión de Actividades" class="sidebar-logo-image sidebar-logo-image-full">
+                <img src="/SIGA/assets/img/logo/logo_SIGA_mini.png" alt="SIGA" class="sidebar-logo-image sidebar-logo-image-mini">
             </a>
-
-            <p>
-                Sistema Institucional<br>
-                de Gestión de Actividades
-            </p>
-
         </div>
 
         <nav class="sidebar-menu">
-
-            <a
-                href="/SIGA/app/views/dashboard/index.php"
-                class="sidebar-link"
-            >
+            <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-link">
                 <i class="bi bi-house-door"></i>
                 <span>Inicio</span>
             </a>
 
             <div class="sidebar-section">
-
-                <a
-                    href="#"
-                    class="sidebar-link active"
-                >
-                    <i class="bi bi-calendar-event"></i>
+                <a href="#" class="sidebar-link active">
+                    <i class="bi bi-calendar-plus"></i>
                     <span>Actividades y Reservas</span>
                     <i class="bi bi-chevron-down sidebar-arrow"></i>
                 </a>
-
                 <div class="sidebar-submenu">
-
-                    <a
-                        href="/SIGA/app/views/actividades/nueva.php"
-                        class="sidebar-sublink active-sub"
-                    >
+                    <a href="/SIGA/app/views/actividades/nueva.php" class="sidebar-sublink active-sub">
                         <span class="submenu-dot"></span>
                         Nueva actividad
                     </a>
-
-                    <a
-                        href="/SIGA/app/views/actividades/actividades.php"
-                        class="sidebar-sublink"
-                    >
+                    <a href="/SIGA/app/views/actividades/actividades.php" class="sidebar-sublink ">
                         <span class="submenu-dot"></span>
-                        Ver actividades
+                        Actividades registradas
                     </a>
-
                 </div>
-
             </div>
 
-                        <a href="../calendario/index.php">
+            <a href="/SIGA/app/views/calendario/index.php" class="sidebar-link">
                 <i class="bi bi-calendar-week"></i>
                 <span>Calendario</span>
             </a>
-
-            <a href="../reportes/index.php">
+            <a href="/SIGA/app/views/reportes/index.php" class="sidebar-link">
                 <i class="bi bi-bar-chart"></i>
                 <span>Reportes</span>
             </a>
-
-            <a href="../auditoria/index.php">
+            <a href="/SIGA/app/views/auditoria/index.php" class="sidebar-link">
                 <i class="bi bi-clock-history"></i>
                 <span>Historial de Acciones</span>
             </a>
-
         </nav>
 
         <div class="sidebar-footer">
-
-            <a
-                href="/SIGA/app/helpers/logout.php"
-                class="sidebar-logout"
-            >
+            <a href="/SIGA/app/helpers/logout.php" class="sidebar-logout">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Cerrar sesión</span>
             </a>
-
         </div>
 
     </aside>
@@ -388,7 +415,7 @@ $mensajeExito = $success === '1';
                     <a
                         href="<?= $mensajeExito
                             ? '/SIGA/app/views/actividades/actividades.php'
-                            : '/SIGA/app/views/dashboard/index.php'
+                            : '/SIGA/app/views/actividades/actividades.php'
                         ?>"
                         class="btn-cancel"
                     >
@@ -838,7 +865,7 @@ $mensajeExito = $success === '1';
 
                                                             <div class="equipment-name">
 
-                                                                <i class="bi bi-display"></i>
+                                                                <i class="bi <?= htmlspecialchars(iconoEquipamiento($equipo['nombre'])) ?>"></i>
 
                                                                 <?= htmlspecialchars($equipo['nombre']) ?>
 

@@ -184,18 +184,8 @@ $claseEstado =
         rel="stylesheet"
         href="/SIGA/assets/css/actividades.css"
     >
-    
-    <style>
-        .sidebar-logo-link {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
 
-        .sidebar-logo-link h1 {
-            color: inherit;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="/SIGA/assets/img/logo/favicon.png">
 
 </head>
 
@@ -208,97 +198,54 @@ $claseEstado =
     <aside class="sidebar">
 
         <div class="sidebar-logo">
-
             <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-logo-link">
-                <h1>
-                    <i class="bi bi-calendar3"></i>
-                    SIGA
-                </h1>
+                <img src="/SIGA/assets/img/logo/logo_SIGA.png" alt="SIGA - Sistema Institucional de Gestión de Actividades" class="sidebar-logo-image sidebar-logo-image-full">
+                <img src="/SIGA/assets/img/logo/logo_SIGA_mini.png" alt="SIGA" class="sidebar-logo-image sidebar-logo-image-mini">
             </a>
-
-            <p>
-                Sistema Institucional<br>
-                de Gestión de Actividades
-            </p>
-
         </div>
 
         <nav class="sidebar-menu">
-
-            <a
-                href="/SIGA/app/views/dashboard/index.php"
-                class="sidebar-link"
-            >
+            <a href="/SIGA/app/views/dashboard/index.php" class="sidebar-link">
                 <i class="bi bi-house-door"></i>
                 <span>Inicio</span>
             </a>
-
             <div class="sidebar-section">
-
-                <a
-                    href="/SIGA/app/views/actividades/actividades.php"
-                    class="sidebar-link active"
-                >
-                    <i class="bi bi-calendar-event"></i>
+                <a href="#" class="sidebar-link active">
+                    <i class="bi bi-calendar-plus"></i>
                     <span>Actividades y Reservas</span>
                     <i class="bi bi-chevron-down sidebar-arrow"></i>
                 </a>
-
                 <div class="sidebar-submenu">
-
-                    <a
-                        href="/SIGA/app/views/actividades/nueva.php"
-                        class="sidebar-sublink"
-                    >
+                    <a href="/SIGA/app/views/actividades/nueva.php" class="sidebar-sublink ">
                         <span class="submenu-dot"></span>
                         Nueva actividad
                     </a>
-
-                    <a
-                        href="/SIGA/app/views/actividades/actividades.php"
-                        class="sidebar-sublink active-sub"
-                    >
+                    <a href="/SIGA/app/views/actividades/actividades.php" class="sidebar-sublink active-sub">
                         <span class="submenu-dot"></span>
                         Actividades registradas
                     </a>
-
                 </div>
-
             </div>
-
-                        <a href="../calendario/index.php">
+            <a href="/SIGA/app/views/calendario/index.php" class="sidebar-link">
                 <i class="bi bi-calendar-week"></i>
                 <span>Calendario</span>
             </a>
-
-            <a href="../reportes/index.php">
+            <a href="/SIGA/app/views/reportes/index.php" class="sidebar-link">
                 <i class="bi bi-bar-chart"></i>
                 <span>Reportes</span>
             </a>
-
-            <a href="../auditoria/index.php">
+            <a href="/SIGA/app/views/auditoria/index.php" class="sidebar-link">
                 <i class="bi bi-clock-history"></i>
                 <span>Historial de Acciones</span>
             </a>
-
         </nav>
-
         <div class="sidebar-footer">
-
-            <a
-                href="/SIGA/app/helpers/logout.php"
-                class="sidebar-logout"
-            >
+            <a href="/SIGA/app/helpers/logout.php" class="sidebar-logout">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Cerrar sesión</span>
             </a>
-
         </div>
-
     </aside>
-
-
-    <!--contenido principal-->
 
     <main class="main-content">
 
@@ -857,6 +804,23 @@ $claseEstado =
                                         $claseAccion = 'creacion';
                                         $iconoAccion = 'bi-plus-circle';
                                         $textoAccion = 'Creación';
+                                    } elseif (
+                                        $accion === 'MODIFICACION' &&
+                                        (
+                                            stripos(
+                                                (string) $registro['detalle'],
+                                                'devolución de equipamiento'
+                                            ) !== false
+                                            ||
+                                            stripos(
+                                                (string) $registro['detalle'],
+                                                'desmarcó la devolución'
+                                            ) !== false
+                                        )
+                                    ) {
+                                        $claseAccion = 'modificacion';
+                                        $iconoAccion = 'bi-box-arrow-in-down';
+                                        $textoAccion = 'Devolución de equipamiento';
                                     } elseif ($accion === 'MODIFICACION') {
                                         $claseAccion = 'modificacion';
                                         $iconoAccion = 'bi-pencil-square';
